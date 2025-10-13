@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catálogo interactivo</title>
+<style>
+  body { font-family: Arial; text-align:center; background:#f8f8f8; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:15px; padding:20px; }
+  .item { background:#fff; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,.1); padding:10px; cursor:pointer; transition:transform .2s; }
+  .item.selected { outline:3px solid #25D366; transform:scale(1.05); }
+  img { width:100%; border-radius:8px; }
+  button { background:#25D366; color:#fff; border:none; padding:12px 25px; border-radius:8px; font-size:16px; cursor:pointer; margin:20px; }
+  button:hover { background:#1ebe57; }
+</style>
+</head>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+</style>
+
+
+<body>
+<h2 style="color: white;">📦 Selecciona tus productos 📦</h2>
+
+<button onclick="enviar()">📩 Enviar por WhatsApp</button>
+
+<h2 style="color: white;">Rack, perchero metálico con ruedas - caballete</h2>
+
+
+<div class="grid" id="catalogo">
+
+ <div class="item" data-nombre="CABALLETE 2 EN 1 NEGRO">
+    <img src="CABALLETE 2 EN 1 NEGRO.jpg" alt="CABALLETE 2 EN 1 NEGRO">
+    <p>CABALLETE 2 EN 1 NEGRO</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE 2 EN 1 NEGRO CON ZAPATERA">
+    <img src="CABALLETE 2 EN 1 NEGRO CON ZAPATERA.jpg" alt="CABALLETE 2 EN 1 NEGRO CON ZAPATERA">
+    <p>CABALLETE 2 EN 1 NEGRO CON ZAPATERA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CARACOL">
+    <img src="CABALLETE CARACOL.jpg" alt="CABALLETE CARACOL">
+    <p>CABALLETE CARACOL</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CIRCULAR DOBLE IMPORTADO">
+    <img src="CABALLETE CIRCULAR DOBLE IMPORTADO.jpg" alt="CABALLETE CIRCULAR DOBLE IMPORTADO">
+    <p>CABALLETE CIRCULAR DOBLE IMPORTADO</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CIRCULAR NEGRO GIRATORIO">
+    <img src="CABALLETE CIRCULAR NEGRO GIRATORIO.jpg" alt="CABALLETE CIRCULAR NEGRO GIRATORIO">
+    <p>CABALLETE CIRCULAR NEGRO GIRATORIO</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CIRCULAR PLOMO AZULADO">
+    <img src="CABALLETE CIRCULAR PLOMO AZULADO.jpg" alt="CABALLETE CIRCULAR PLOMO AZULADO">
+    <p>CABALLETE CIRCULAR PLOMO AZULADO</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO 1 NIVEL">
+    <img src="CABALLETE CROMADO 1 NIVEL.jpg" alt="CABALLETE CROMADO 1 NIVEL">
+    <p>CABALLETE CROMADO 1 NIVEL</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO 2 NIVELES">
+    <img src="CABALLETE CROMADO 2 NIVELES.jpg" alt="CABALLETE CROMADO 2 NIVELES">
+    <p>CABALLETE CROMADO 2 NIVELES</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO CON SALIDA 1 M CREMALLERA 1 RANURA">
+    <img src="CABALLETE CROMADO CON SALIDA 1 M CREMALLERA 1 RANURA.jpg" alt="CABALLETE CROMADO CON SALIDA 1 M CREMALLERA 1 RANURA">
+    <p>CABALLETE CROMADO CON SALIDA 1 M CREMALLERA 1 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO CON SALIDA 1 M CREMALLERA 2 RANURA">
+    <img src="CABALLETE CROMADO CON SALIDA 1 M CREMALLERA 2 RANURA.jpg" alt="CABALLETE CROMADO CON SALIDA 1 M CREMALLERA 2 RANURA">
+    <p>CABALLETE CROMADO CON SALIDA 1 M CREMALLERA 2 RANURA</p>
+  </div>
+
+<div class="item" data-nombre="CABALLETE CROMADO CON SALIDA 1 M EMPOTRABLE">
+    <img src="CABALLETE CROMADO CON SALIDA 1 M EMPOTRABLE.jpg" alt="CABALLETE CROMADO CON SALIDA 1 M EMPOTRABLE">
+    <p>CABALLETE CROMADO CON SALIDA 1 M EMPOTRABLE</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO CON SALIDA 1.2 M CREMALLERA 1 RANURA">
+    <img src="CABALLETE CROMADO CON SALIDA 1.2 M CREMALLERA 1 RANURA.jpg" alt="CABALLETE CROMADO CON SALIDA 1.2 M CREMALLERA 1 RANURA">
+    <p>CABALLETE CROMADO CON SALIDA 1.2 M CREMALLERA 1 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO CON SALIDA 1.2 M CREMALLERA 2 RANURA">
+    <img src="CABALLETE CROMADO CON SALIDA 1.2 M CREMALLERA 2 RANURA.jpg" alt="CABALLETE CROMADO CON SALIDA 1.2 M CREMALLERA 2 RANURA">
+    <p>CABALLETE CROMADO CON SALIDA 1.2 M CREMALLERA 2 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO CON SALIDA 1.2 M EMPOTRABLE">
+    <img src="CABALLETE CROMADO CON SALIDA 1.2 M EMPOTRABLE.jpg" alt="CABALLETE CROMADO CON SALIDA 1.2 M EMPOTRABLE">
+    <p>CABALLETE CROMADO CON SALIDA 1.2 M EMPOTRABLE</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO CON SALIDA 60 CM CREMALLERA 1 RANURA">
+    <img src="CABALLETE CROMADO CON SALIDA 60 CM CREMALLERA 1 RANURA.jpg" alt="CABALLETE CROMADO CON SALIDA 60 CM CREMALLERA 1 RANURA">
+    <p>CABALLETE CROMADO CON SALIDA 60 CM CREMALLERA 1 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO CON SALIDA 60 CM CREMALLERA 2 RANURA">
+    <img src="CABALLETE CROMADO CON SALIDA 60 CM CREMALLERA 2 RANURA.jpg" alt="CABALLETE CROMADO CON SALIDA 60 CM CREMALLERA 2 RANURA">
+    <p>CABALLETE CROMADO CON SALIDA 60 CM CREMALLERA 2 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO CON SALIDA 60 CM EMPOTRABLE">
+    <img src="CABALLETE CROMADO CON SALIDA 60 CM EMPOTRABLE.jpg" alt="CABALLETE CROMADO CON SALIDA 60 CM EMPOTRABLE">
+    <p>CABALLETE CROMADO CON SALIDA 60 CM EMPOTRABLE</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO CON SALIDA 80 CM CREMALLERA 1 RANURA">
+    <img src="CABALLETE CROMADO CON SALIDA 80 CM CREMALLERA 1 RANURA.jpg" alt="CABALLETE CROMADO CON SALIDA 80 CM CREMALLERA 1 RANURA">
+    <p>CABALLETE CROMADO CON SALIDA 80 CM CREMALLERA 1 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO CON SALIDA 80 CM CREMALLERA 2 RANURA">
+    <img src="CABALLETE CROMADO CON SALIDA 80 CM CREMALLERA 2 RANURA.jpg" alt="CABALLETE CROMADO CON SALIDA 80 CM CREMALLERA 2 RANURA">
+    <p>CABALLETE CROMADO CON SALIDA 80 CM CREMALLERA 2 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO CON SALIDA 80 CM EMPOTRABLE">
+    <img src="CABALLETE CROMADO CON SALIDA 80 CM EMPOTRABLE.jpg" alt="CABALLETE CROMADO CON SALIDA 80 CM EMPOTRABLE">
+    <p>CABALLETE CROMADO CON SALIDA 80 CM EMPOTRABLE</p>
+  </div>
+
+<div class="item" data-nombre="CABALLETE CROMADO SIN SALIDA 1 M CREMALLERA 1 RANURA">
+    <img src="CABALLETE CROMADO SIN SALIDA 1 M CREMALLERA 1 RANURA.jpg" alt="CABALLETE CROMADO SIN SALIDA 1 M CREMALLERA 1 RANURA">
+    <p>CABALLETE CROMADO SIN SALIDA 1 M CREMALLERA 1 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO SIN SALIDA 1 M CREMALLERA 2 RANURA">
+    <img src="CABALLETE CROMADO SIN SALIDA 1 M CREMALLERA 2 RANURA.jpg" alt="CABALLETE CROMADO SIN SALIDA 1 M CREMALLERA 2 RANURA">
+    <p>CABALLETE CROMADO SIN SALIDA 1 M CREMALLERA 2 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO SIN SALIDA 1 M EMPOTRABLE">
+    <img src="CABALLETE CROMADO SIN SALIDA 1 M EMPOTRABLE.jpg" alt="CABALLETE CROMADO SIN SALIDA 1 M EMPOTRABLE">
+    <p>CABALLETE CROMADO SIN SALIDA 1 M EMPOTRABLE</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO SIN SALIDA 1.2 M CREMALLERA 1 RANURA">
+    <img src="CABALLETE CROMADO SIN SALIDA 1.2 M CREMALLERA 1 RANURA.jpg" alt="CABALLETE CROMADO SIN SALIDA 1.2 M CREMALLERA 1 RANURA">
+    <p>CABALLETE CROMADO SIN SALIDA 1.2 M CREMALLERA 1 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO SIN SALIDA 1.2 M CREMALLERA 2 RANURA">
+    <img src="CABALLETE CROMADO SIN SALIDA 1.2 M CREMALLERA 2 RANURA.jpg" alt="CABALLETE CROMADO SIN SALIDA 1.2 M CREMALLERA 2 RANURA">
+    <p>CABALLETE CROMADO SIN SALIDA 1.2 M CREMALLERA 2 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO SIN SALIDA 60 CM CREMALLERA 1 RANURA">
+    <img src="CABALLETE CROMADO SIN SALIDA 60 CM CREMALLERA 1 RANURA.jpg" alt="CABALLETE CROMADO SIN SALIDA 60 CM CREMALLERA 1 RANURA">
+    <p>CABALLETE CROMADO SIN SALIDA 60 CM CREMALLERA 1 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO SIN SALIDA 60 CM CREMALLERA 2 RANURA">
+    <img src="CABALLETE CROMADO SIN SALIDA 60 CM CREMALLERA 2 RANURA.jpg" alt="CABALLETE CROMADO SIN SALIDA 60 CM CREMALLERA 2 RANURA">
+    <p>CABALLETE CROMADO SIN SALIDA 60 CM CREMALLERA 2 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO SIN SALIDA 80 CM CREMALLERA 1 RANURA">
+    <img src="CABALLETE CROMADO SIN SALIDA 80 CM CREMALLERA 1 RANURA.jpg" alt="CABALLETE CROMADO SIN SALIDA 80 CM CREMALLERA 1 RANURA">
+    <p>CABALLETE CROMADO SIN SALIDA 80 CM CREMALLERA 1 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO SIN SALIDA 80 CM CREMALLERA 2 RANURA">
+    <img src="CABALLETE CROMADO SIN SALIDA 80 CM CREMALLERA 2 RANURA.jpg" alt="CABALLETE CROMADO SIN SALIDA 80 CM CREMALLERA 2 RANURA">
+    <p>CABALLETE CROMADO SIN SALIDA 80 CM CREMALLERA 2 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CROMADO SIN SALIDA 80 CM EMPOTRABLE">
+    <img src="CABALLETE CROMADO SIN SALIDA 80 CM EMPOTRABLE.jpg" alt="CABALLETE CROMADO SIN SALIDA 80 CM EMPOTRABLE">
+    <p>CABALLETE CROMADO SIN SALIDA 80 CM EMPOTRABLE</p>
+  </div>
+
+<div class="item" data-nombre="CABALLETE CROMADO SIN SALIDA 90 CM 2 RANURAS">
+    <img src="CABALLETE CROMADO SIN SALIDA 90 CM 2 RANURAS.jpg" alt="CABALLETE CROMADO SIN SALIDA 90 CM 2 RANURAS">
+    <p>CABALLETE CROMADO SIN SALIDA 90 CM 2 RANURAS</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CUADRADO IMPORTADO CROMADO">
+    <img src="CABALLETE CUADRADO IMPORTADO CROMADO.jpg" alt="CABALLETE CUADRADO IMPORTADO CROMADO">
+    <p>CABALLETE CUADRADO IMPORTADO CROMADO</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE CUADRADO NEGRO">
+    <img src="CABALLETE CUADRADO NEGRO.jpg" alt="CABALLETE CUADRADO NEGRO">
+    <p>CABALLETE CUADRADO NEGRO</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE DE TECHO CROMADA">
+    <img src="CABALLETE DE TECHO CROMADA.jpg" alt="CABALLETE DE TECHO CROMADA">
+    <p>CABALLETE DE TECHO CROMADA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE DOBLE PLOMO AZULADO">
+    <img src="CABALLETE DOBLE PLOMO AZULADO.jpg" alt="CABALLETE DOBLE PLOMO AZULADO">
+    <p>CABALLETE DOBLE PLOMO AZULADO</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE DOBLE RANURA CUADRADO CROMADO IMPORTADO">
+    <img src="CABALLETE DOBLE RANURA CUADRADO CROMADO IMPORTADO.jpg" alt="CABALLETE DOBLE RANURA CUADRADO CROMADO IMPORTADO">
+    <p>CABALLETE DOBLE RANURA CUADRADO CROMADO IMPORTADO</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE DOBLE RANURA REDONDO CROMADO IMPORTADO">
+    <img src="CABALLETE DOBLE RANURA REDONDO CROMADO IMPORTADO.jpg" alt="CABALLETE DOBLE RANURA REDONDO CROMADO IMPORTADO">
+    <p>CABALLETE DOBLE RANURA REDONDO CROMADO IMPORTADO</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE DORADO 1 NIVEL">
+    <img src="CABALLETE DORADO 1 NIVEL.jpg" alt="CABALLETE DORADO 1 NIVEL">
+    <p>CABALLETE DORADO 1 NIVEL</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE DORADO 2 NIVELES">
+    <img src="CABALLETE DORADO 2 NIVELES.jpg" alt="CABALLETE DORADO 2 NIVELES">
+    <p>CABALLETE DORADO 2 NIVELES</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE DORADO CON SALIDA 60CM 1 RANURA">
+    <img src="CABALLETE DORADO CON SALIDA 60CM 1 RANURA.jpg" alt="CABALLETE DORADO CON SALIDA 60CM 1 RANURA">
+    <p>CABALLETE DORADO CON SALIDA 60CM 1 RANURA</p>
+  </div>
+
+<div class="item" data-nombre="CABALLETE DORADO CON SALIDA 90CM 2 RANURAS">
+    <img src="CABALLETE DORADO CON SALIDA 90CM 2 RANURAS.jpg" alt="CABALLETE DORADO CON SALIDA 90CM 2 RANURAS">
+    <p>CABALLETE DORADO CON SALIDA 90CM 2 RANURAS</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE DORADO CUADRADO IMPORTADO">
+    <img src="CABALLETE DORADO CUADRADO IMPORTADO.jpg" alt="CABALLETE DORADO CUADRADO IMPORTADO">
+    <p>CABALLETE DORADO CUADRADO IMPORTADO</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE DORADO CUADRADO SIMPLE">
+    <img src="CABALLETE DORADO CUADRADO SIMPLE.jpg" alt="CABALLETE DORADO CUADRADO SIMPLE">
+    <p>CABALLETE DORADO CUADRADO SIMPLE</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE DORADO REDONDO IMPORTADO">
+    <img src="CABALLETE DORADO REDONDO IMPORTADO.jpg" alt="CABALLETE DORADO REDONDO IMPORTADO">
+    <p>CABALLETE DORADO REDONDO IMPORTADO</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE DORADO REDONDO SIMPLE">
+    <img src="CABALLETE DORADO REDONDO SIMPLE.jpg" alt="CABALLETE DORADO REDONDO SIMPLE">
+    <p>CABALLETE DORADO REDONDO SIMPLE</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO 2 EN 1">
+    <img src="CABALLETE NEGRO 2 EN 1.jpg" alt="CABALLETE NEGRO 2 EN 1">
+    <p>CABALLETE NEGRO 2 EN 1</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO CUADRADO">
+    <img src="CABALLETE NEGRO CUADRADO.jpg" alt="CABALLETE NEGRO CUADRADO">
+    <p>CABALLETE NEGRO CUADRADO</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO DE TECHO">
+    <img src="CABALLETE NEGRO DE TECHO.jpg" alt="CABALLETE NEGRO DE TECHO">
+    <p>CABALLETE NEGRO DE TECHO</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO DE TECHO CON BASE">
+    <img src="CABALLETE NEGRO DE TECHO CON BASE.jpg" alt="CABALLETE NEGRO DE TECHO CON BASE">
+    <p>CABALLETE NEGRO DE TECHO CON BASE</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO DOBLE RANURA">
+    <img src="CABALLETE NEGRO DOBLE RANURA.jpg" alt="CABALLETE NEGRO DOBLE RANURA">
+    <p>CABALLETE NEGRO DOBLE RANURA</p>
+  </div>
+
+ <div class="item" data-nombre="CABALLETE NEGRO DOBLE ZAPATERA">
+    <img src="CABALLETE NEGRO DOBLE ZAPATERA.jpg" alt="CABALLETE NEGRO DOBLE ZAPATERA">
+    <p>CABALLETE NEGRO DOBLE ZAPATERA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO ECONÓMICO 1 NIVEL">
+    <img src="CABALLETE NEGRO ECONÓMICO 1 NIVEL.jpg" alt="CABALLETE NEGRO ECONÓMICO 1 NIVEL">
+    <p>CABALLETE NEGRO ECONÓMICO 1 NIVEL</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO ECONÓMICO 2 NIVELES">
+    <img src="CABALLETE NEGRO ECONÓMICO 2 NIVELES.jpg" alt="CABALLETE NEGRO ECONÓMICO 2 NIVELES">
+    <p>CABALLETE NEGRO ECONÓMICO 2 NIVELES</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO GIRATORIO">
+    <img src="CABALLETE NEGRO GIRATORIO.jpg" alt="CABALLETE NEGRO GIRATORIO">
+    <p>CABALLETE NEGRO GIRATORIO</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO IMPORTADO">
+    <img src="CABALLETE NEGRO IMPORTADO.jpg" alt="CABALLETE NEGRO IMPORTADO">
+    <p>CABALLETE NEGRO IMPORTADO</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO IMPORTADO 1 NIVEL">
+    <img src="CABALLETE NEGRO IMPORTADO 1 NIVEL.jpg" alt="CABALLETE NEGRO IMPORTADO 1 NIVEL">
+    <p>CABALLETE NEGRO IMPORTADO 1 NIVEL</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO IMPORTADO 2 NIVELES">
+    <img src="CABALLETE NEGRO IMPORTADO 2 NIVELES.jpg" alt="CABALLETE NEGRO IMPORTADO 2 NIVELES">
+    <p>CABALLETE NEGRO IMPORTADO 2 NIVELES</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO MIXTO 1 NIVEL">
+    <img src="CABALLETE NEGRO MIXTO 1 NIVEL.jpg" alt="CABALLETE NEGRO MIXTO 1 NIVEL">
+    <p>CABALLETE NEGRO MIXTO 1 NIVEL</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO MIXTO 2 NIVELES">
+    <img src="CABALLETE NEGRO MIXTO 2 NIVELES.jpg" alt="CABALLETE NEGRO MIXTO 2 NIVELES">
+    <p>CABALLETE NEGRO MIXTO 2 NIVELES</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO SIN SALIDA 1 M 1 RANURA">
+    <img src="CABALLETE NEGRO SIN SALIDA 1 M 1 RANURA.jpg" alt="CABALLETE NEGRO SIN SALIDA 1 M 1 RANURA">
+    <p>CABALLETE NEGRO SIN SALIDA 1 M 1 RANURA</p>
+  </div>
+
+<div class="item" data-nombre="CABALLETE NEGRO SIN SALIDA 1,2 M 1 RANURA">
+    <img src="CABALLETE NEGRO SIN SALIDA 1,2 M 1 RANURA.jpg" alt="CABALLETE NEGRO SIN SALIDA 1,2 M 1 RANURA">
+    <p>CABALLETE NEGRO SIN SALIDA 1,2 M 1 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO SIN SALIDA 1,2 M 2 RANURA">
+    <img src="CABALLETE NEGRO SIN SALIDA 1,2 M 2 RANURA.jpg" alt="CABALLETE NEGRO SIN SALIDA 1,2 M 2 RANURA">
+    <p>CABALLETE NEGRO SIN SALIDA 1,2 M 2 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO SIN SALIDA 1,2 M E">
+    <img src="CABALLETE NEGRO SIN SALIDA 1,2 M E.jpg" alt="CABALLETE NEGRO SIN SALIDA 1,2 M E">
+    <p>CABALLETE NEGRO SIN SALIDA 1,2 M E</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO SIN SALIDA 1M 2 RANURA">
+    <img src="CABALLETE NEGRO SIN SALIDA 1M 2 RANURA.jpg" alt="CABALLETE NEGRO SIN SALIDA 1M 2 RANURA">
+    <p>CABALLETE NEGRO SIN SALIDA 1M 2 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO SIN SALIDA 60 CM 1 RANURA">
+    <img src="CABALLETE NEGRO SIN SALIDA 60 CM 1 RANURA.jpg" alt="CABALLETE NEGRO SIN SALIDA 60 CM 1 RANURA">
+    <p>CABALLETE NEGRO SIN SALIDA 60 CM 1 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO SIN SALIDA 60 CM 2 RANURA">
+    <img src="CABALLETE NEGRO SIN SALIDA 60 CM 2 RANURA.jpg" alt="CABALLETE NEGRO SIN SALIDA 60 CM 2 RANURA">
+    <p>CABALLETE NEGRO SIN SALIDA 60 CM 2 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO SIN SALIDA 80 CM 1 RANURA">
+    <img src="CABALLETE NEGRO SIN SALIDA 80 CM 1 RANURA.jpg" alt="CABALLETE NEGRO SIN SALIDA 80 CM 1 RANURA">
+    <p>CABALLETE NEGRO SIN SALIDA 80 CM 1 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO SIN SALIDA 80 CM 2 RANURA">
+    <img src="CABALLETE NEGRO SIN SALIDA 80 CM 2 RANURA.jpg" alt="CABALLETE NEGRO SIN SALIDA 80 CM 2 RANURA">
+    <p>CABALLETE NEGRO SIN SALIDA 80 CM 2 RANURA</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE NEGRO SIN SALIDA 90CM CR2R">
+    <img src="CABALLETE NEGRO SIN SALIDA 90CM CR2R.jpg" alt="CABALLETE NEGRO SIN SALIDA 90CM CR2R">
+    <p>CABALLETE NEGRO SIN SALIDA 90CM CR2R</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE PLANO PLANO MIXTO">
+    <img src="CABALLETE PLANO PLANO MIXTO.jpg" alt="CABALLETE PLANO PLANO MIXTO">
+    <p>CABALLETE PLANO PLANO MIXTO</p>
+  </div>
+
+<div class="item" data-nombre="CABALLETE PLANO PLANO NEGRO">
+    <img src="CABALLETE PLANO PLANO NEGRO.jpg" alt="CABALLETE PLANO PLANO NEGRO">
+    <p>CABALLETE PLANO PLANO NEGRO</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE PLANO REDONDO MIXTO">
+    <img src="CABALLETE PLANO REDONDO MIXTO.jpg" alt="CABALLETE PLANO REDONDO MIXTO">
+    <p>CABALLETE PLANO REDONDO MIXTO</p>
+  </div>
+
+  <div class="item" data-nombre="CABALLETE SIMPLE DOBLE ZAPATERA NEGRO">
+    <img src="CABALLETE SIMPLE DOBLE ZAPATERA NEGRO.jpg" alt="CABALLETE SIMPLE DOBLE ZAPATERA NEGRO">
+    <p>CABALLETE SIMPLE DOBLE ZAPATERA NEGRO</p>
+  </div>
+
+  <div class="item" data-nombre="VESTIDOR CIRCULAR CROMADO">
+    <img src="VESTIDOR CIRCULAR CROMADO.jpg" alt="VESTIDOR CIRCULAR CROMADO">
+    <p>VESTIDOR CIRCULAR CROMADO</p>
+  </div>
+
+  <div class="item" data-nombre="VESTIDOR CIRCULAR NEGRO">
+    <img src="VESTIDOR CIRCULAR NEGRO.jpg" alt="VESTIDOR CIRCULAR NEGRO">
+    <p>VESTIDOR CIRCULAR NEGRO</p>
+  </div>
+
+  <div class="item" data-nombre="VESTIDOR CUADRADO">
+    <img src="VESTIDOR CUADRADO.jpg" alt="VESTIDOR CUADRADO">
+    <p>VESTIDOR CUADRADO</p>
+  </div>
+
+  <div class="item" data-nombre="VESTIDOR CUADRADO CON MALLA">
+    <img src="VESTIDOR CUADRADO CON MALLA.jpg" alt="VESTIDOR CUADRADO CON MALLA">
+    <p>VESTIDOR CUADRADO CON MALLA</p>
+  </div>
+
+  <div class="item" data-nombre="VESTIDOR U CROMADO">
+    <img src="VESTIDOR U CROMADO.jpg" alt="VESTIDOR U CROMADO">
+    <p>VESTIDOR U CROMADO</p>
+  </div>
+
+  <div class="item" data-nombre="VESTIDOR U NEGRO">
+    <img src="VESTIDOR U NEGRO.jpg" alt="VESTIDOR U NEGRO">
+    <p>VESTIDOR U NEGRO</p>
+  </div>
+
+  <div class="item" data-nombre="VESTIDOR CROMADO CON RUEDAS">
+    <img src="VESTIDOR CROMADO CON RUEDAS.jpg" alt="VESTIDOR CROMADO CON RUEDAS">
+    <p>VESTIDOR CROMADO CON RUEDAS</p>
+  </div>
+</div>
+
+
+<h2 style="color: white;">Tubos, Barras y Palitos</h2>
+
+<div class="grid" id="catalogo">
+<div class="item" data-nombre="BARRA 3M CROMADO">
+    <img src="BARRA 3M CROMADO.jpg" alt="BARRA 3M CROMADO">
+    <p>BARRA 3M CROMADO</p>
+  </div>
+
+  <div class="item" data-nombre="BASE PARA BARRA CROMADA">
+    <img src="BASE PARA BARRA CROMADA.jpg" alt="BASE PARA BARRA CROMADA">
+    <p>BASE PARA BARRA CROMADA</p>
+  </div>
+
+  <div class="item" data-nombre="CASCADA 7 BILLAS PLANO PLANO">
+    <img src="CASCADA 7 BILLAS PLANO PLANO.jpg" alt="CASCADA 7 BILLAS PLANO PLANO">
+    <p>CASCADA 7 BILLAS PLANO PLANO</p>
+  </div>
+
+  <div class="item" data-nombre="CASCADA AVION 5 BILLAS">
+    <img src="CASCADA AVION 5 BILLAS.jpg" alt="CASCADA AVION 5 BILLAS">
+    <p>CASCADA AVION 5 BILLAS</p>
+  </div>
+
+  <div class="item" data-nombre="CASCADA AVION 7 BILLAS">
+    <img src="CASCADA AVION 7 BILLAS.jpg" alt="CASCADA AVION 7 BILLAS">
+    <p>CASCADA AVION 7 BILLAS</p>
+  </div>
+
+  <div class="item" data-nombre="CASCADA CROMADA 7 BILLAS MALLA">
+    <img src="CASCADA CROMADA 7 BILLAS MALLA.jpg" alt="CASCADA CROMADA 7 BILLAS MALLA">
+    <p>CASCADA CROMADA 7 BILLAS MALLA</p>
+  </div>
+
+  <div class="item" data-nombre="CASCADA EMPOTRABLE 5 BILLAS">
+    <img src="CASCADA EMPOTRABLE 5 BILLAS.jpg" alt="CASCADA EMPOTRABLE 5 BILLAS">
+    <p>CASCADA EMPOTRABLE 5 BILLAS</p>
+  </div>
+
+  <div class="item" data-nombre="MESA RECTANGULAR ACERO INOXIDABLE">
+    <img src="MESA RECTANGULAR ACERO INOXIDABLE.jpg" alt="MESA RECTANGULAR ACERO INOXIDABLE">
+    <p>MESA RECTANGULAR ACERO INOXIDABLE</p>
+  </div>
+
+  <div class="item" data-nombre="PALITO RECTO 7 BILLAS BASE PLANA">
+    <img src="PALITO RECTO 7 BILLAS BASE PLANA.jpg" alt="PALITO RECTO 7 BILLAS BASE PLANA">
+    <p>PALITO RECTO 7 BILLAS BASE PLANA</p>
+  </div>
+
+  <div class="item" data-nombre="RECTANGULAR CROMADO DELGADO 20 CM TRUPAN">
+    <img src="RECTANGULAR CROMADO DELGADO 20 CM TRUPAN.jpg" alt="RECTANGULAR CROMADO DELGADO 20 CM TRUPAN">
+    <p>RECTANGULAR CROMADO DELGADO 20 CM TRUPAN</p>
+  </div>
+
+<div class="item" data-nombre="RECTANGULAR CROMADO DELGADO 25 CM TRUPAN">
+    <img src="RECTANGULAR CROMADO DELGADO 25 CM TRUPAN.jpg" alt="RECTANGULAR CROMADO DELGADO 25 CM TRUPAN">
+    <p>RECTANGULAR CROMADO DELGADO 25 CM TRUPAN</p>
+  </div>
+
+  <div class="item" data-nombre="RECTANGULAR CROMADO DELGADO 30 CM TRUPAN">
+    <img src="RECTANGULAR CROMADO DELGADO 30 CM TRUPAN.jpg" alt="RECTANGULAR CROMADO DELGADO 30 CM TRUPAN">
+    <p>RECTANGULAR CROMADO DELGADO 30 CM TRUPAN</p>
+  </div>
+
+  <div class="item" data-nombre="RECTANGULAR CROMADO GRUESO 20 CM TRUPAN">
+    <img src="RECTANGULAR CROMADO GRUESO 20 CM TRUPAN.jpg" alt="RECTANGULAR CROMADO GRUESO 20 CM TRUPAN">
+    <p>RECTANGULAR CROMADO GRUESO 20 CM TRUPAN</p>
+  </div>
+
+  <div class="item" data-nombre="RECTANGULAR CROMADO GRUESO 25 CM TRUPAN">
+    <img src="RECTANGULAR CROMADO GRUESO 25 CM TRUPAN.jpg" alt="RECTANGULAR CROMADO GRUESO 25 CM TRUPAN">
+    <p>RECTANGULAR CROMADO GRUESO 25 CM TRUPAN</p>
+  </div>
+
+  <div class="item" data-nombre="RECTANGULAR CROMADO GRUESO 30 CM TRUPAN">
+    <img src="RECTANGULAR CROMADO GRUESO 30 CM TRUPAN.jpg" alt="RECTANGULAR CROMADO GRUESO 30 CM TRUPAN">
+    <p>RECTANGULAR CROMADO GRUESO 30 CM TRUPAN</p>
+  </div>
+
+  <div class="item" data-nombre="RECTANGULAR DELGADO CROMADO 25CM CREMALLERA 2 RANURAS">
+    <img src="RECTANGULAR DELGADO CROMADO 25CM CREMALLERA 2 RANURAS.jpg" alt="RECTANGULAR DELGADO CROMADO 25CM CREMALLERA 2 RANURAS">
+    <p>RECTANGULAR DELGADO CROMADO 25CM CREMALLERA 2 RANURAS</p>
+  </div>
+
+  <div class="item" data-nombre="RECTANGULAR DORADO DELGADO 30CM 1R">
+    <img src="RECTANGULAR DORADO DELGADO 30CM 1R.jpg" alt="RECTANGULAR DORADO DELGADO 30CM 1R">
+    <p>RECTANGULAR DORADO DELGADO 30CM 1R</p>
+  </div>
+
+  <div class="item" data-nombre="RECTANGULAR DORADO GRUESO 30 CM BASE PLANA">
+    <img src="RECTANGULAR DORADO GRUESO 30 CM BASE PLANA.jpg" alt="RECTANGULAR DORADO GRUESO 30 CM BASE PLANA">
+    <p>RECTANGULAR DORADO GRUESO 30 CM BASE PLANA</p>
+  </div>
+
+  <div class="item" data-nombre="RECTANGULAR GRUESO CROMADO 30CM BASE PLANA">
+    <img src="RECTANGULAR GRUESO CROMADO 30CM BASE PLANA.jpg" alt="RECTANGULAR GRUESO CROMADO 30CM BASE PLANA">
+    <p>RECTANGULAR GRUESO CROMADO 30CM BASE PLANA</p>
+  </div>
+
+  <div class="item" data-nombre="RECTANGULAR GRUESO NEGRO/CROMO BASE PLANA 30CM">
+    <img src="RECTANGULAR GRUESO NEGRO CROMO BASE PLANA 30CM.jpg" alt="RECTANGULAR GRUESO NEGRO/CROMO BASE PLANA 30CM">
+    <p>RECTANGULAR GRUESO NEGRO/CROMO BASE PLANA 30CM</p>
+  </div>
+
+<div class="item" data-nombre="RECTANGULAR GRUESO NEGRO/NEGRO BASE PLANA 30CM">
+    <img src="RECTANGULAR GRUESO NEGRO NEGRO BASE PLANA 30CM.jpg" alt="RECTANGULAR GRUESO NEGRO/NEGRO BASE PLANA 30CM">
+    <p>RECTANGULAR GRUESO NEGRO/NEGRO BASE PLANA 30CM</p>
+  </div>
+
+  <div class="item" data-nombre="RECTANGULAR GRUESO NEGRO BASE PLANA 30 CM">
+    <img src="RECTANGULAR GRUESO NEGRO BASE PLANA 30 CM.jpg" alt="RECTANGULAR GRUESO NEGRO BASE PLANA 30 CM">
+    <p>RECTANGULAR GRUESO NEGRO BASE PLANA 30 CM</p>
+  </div>
+
+  <div class="item" data-nombre="RECTANGULAR NEGRO DELGADO 25 CM 2">
+    <img src="RECTANGULAR NEGRO DELGADO 25 CM 2.jpg" alt="RECTANGULAR NEGRO DELGADO 25 CM 2">
+    <p>RECTANGULAR NEGRO DELGADO 25 CM 2</p>
+  </div>
+
+  <div class="item" data-nombre="RECTANGULAR NEGRO DELGADO 25 CM TRUPAN">
+    <img src="RECTANGULAR NEGRO DELGADO 25 CM TRUPAN.jpg" alt="RECTANGULAR NEGRO DELGADO 25 CM TRUPAN">
+    <p>RECTANGULAR NEGRO DELGADO 25 CM TRUPAN</p>
+  </div>
+
+  <div class="item" data-nombre="RECTANGULAR NEGRO DELGADO 30 CM TRUPAN">
+    <img src="RECTANGULAR NEGRO DELGADO 30 CM TRUPAN.jpg" alt="RECTANGULAR NEGRO DELGADO 30 CM TRUPAN">
+    <p>RECTANGULAR NEGRO DELGADO 30 CM TRUPAN</p>
+  </div>
+
+  <div class="item" data-nombre="RECTANGULAR NEGRO GRUESO 25 CM TRUPAN">
+    <img src="RECTANGULAR NEGRO GRUESO 25 CM TRUPAN.jpg" alt="RECTANGULAR NEGRO GRUESO 25 CM TRUPAN">
+    <p>RECTANGULAR NEGRO GRUESO 25 CM TRUPAN</p>
+  </div>
+
+  <div class="item" data-nombre="RECTANGULAR NEGRO GRUESO 30 CM TRUPAN">
+    <img src="RECTANGULAR NEGRO GRUESO 30 CM TRUPAN.jpg" alt="RECTANGULAR NEGRO GRUESO 30 CM TRUPAN">
+    <p>RECTANGULAR NEGRO GRUESO 30 CM TRUPAN</p>
+  </div>
+
+  <div class="item" data-nombre="RECTANGULAR NEGRO GRUESO BASE PLANA 30 CM">
+    <img src="RECTANGULAR NEGRO GRUESO BASE PLANA 30 CM.jpg" alt="RECTANGULAR NEGRO GRUESO BASE PLANA 30 CM">
+    <p>RECTANGULAR NEGRO GRUESO BASE PLANA 30 CM</p>
+  </div>
+
+  <div class="item" data-nombre="RECTANGULAR NEGRO GRUESO CREMALLERA 30 CM">
+    <img src="RECTANGULAR NEGRO GRUESO CREMALLERA 30 CM.jpg" alt="RECTANGULAR NEGRO GRUESO CREMALLERA 30 CM">
+    <p>RECTANGULAR NEGRO GRUESO CREMALLERA 30 CM</p>
+  </div>
+
+  <div class="item" data-nombre="RECTANGULAR NEGRO GRUESO CREMALLERA 25 CM">
+    <img src="RECTANGULAR NEGRO GRUESO CREMALLERA 25 CM.jpg" alt="RECTANGULAR NEGRO GRUESO CREMALLERA 25 CM">
+    <p>RECTANGULAR NEGRO GRUESO CREMALLERA 25 CM</p>
+  </div>
+
+<div class="item" data-nombre="TUBO CASCADA EMPOTRABLE 7 BILLAS">
+    <img src="TUBO CASCADA EMPOTRABLE 7 BILLAS.jpg" alt="TUBO CASCADA EMPOTRABLE 7 BILLAS">
+    <p>TUBO CASCADA EMPOTRABLE 7 BILLAS</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO CASCADA TRUPAN 5 BILLAS">
+    <img src="TUBO CASCADA TRUPAN 5 BILLAS.jpg" alt="TUBO CASCADA TRUPAN 5 BILLAS">
+    <p>TUBO CASCADA TRUPAN 5 BILLAS</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO CASCADA TRUPAN 6 BILLAS">
+    <img src="TUBO CASCADA TRUPAN 6 BILLAS.jpg" alt="TUBO CASCADA TRUPAN 6 BILLAS">
+    <p>TUBO CASCADA TRUPAN 6 BILLAS</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO CASCADA TRUPAN 7 BILLAS">
+    <img src="TUBO CASCADA TRUPAN 7 BILLAS.jpg" alt="TUBO CASCADA TRUPAN 7 BILLAS">
+    <p>TUBO CASCADA TRUPAN 7 BILLAS</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO CON DISEÑOS TRUPAN">
+    <img src="TUBO CON DISEÑOS TRUPAN.jpg" alt="TUBO CON DISEÑOS TRUPAN">
+    <p>TUBO CON DISEÑOS TRUPAN</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO EMPOTRABLE COCO 7 PUNTAS">
+    <img src="TUBO EMPOTRABLE COCO 7 PUNTAS.jpg" alt="TUBO EMPOTRABLE COCO 7 PUNTAS">
+    <p>TUBO EMPOTRABLE COCO 7 PUNTAS</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO INCLINADO CROMADO 5 BILLAS BASE PLANA">
+    <img src="TUBO INCLINADO CROMADO 5 BILLAS BASE PLANA.jpg" alt="TUBO INCLINADO CROMADO 5 BILLAS BASE PLANA">
+    <p>TUBO INCLINADO CROMADO 5 BILLAS BASE PLANA</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO INCLINADO CROMADO 6 BILLAS BASE PLANA">
+    <img src="TUBO INCLINADO CROMADO 6 BILLAS BASE PLANA.jpg" alt="TUBO INCLINADO CROMADO 6 BILLAS BASE PLANA">
+    <p>TUBO INCLINADO CROMADO 6 BILLAS BASE PLANA</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO INCLINADO CROMADO 6 BILLAS TRUPAN">
+    <img src="TUBO INCLINADO CROMADO 6 BILLAS TRUPAN.jpg" alt="TUBO INCLINADO CROMADO 6 BILLAS TRUPAN">
+    <p>TUBO INCLINADO CROMADO 6 BILLAS TRUPAN</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO INCLINADO CROMADO 7 BILLAS BASE PLANA">
+    <img src="TUBO INCLINADO CROMADO 7 BILLAS BASE PLANA.jpg" alt="TUBO INCLINADO CROMADO 7 BILLAS BASE PLANA">
+    <p>TUBO INCLINADO CROMADO 7 BILLAS BASE PLANA</p>
+  </div>
+
+<div class="item" data-nombre="TUBO INCLINADO CROMADO 7 BILLAS TRUPAN">
+    <img src="TUBO INCLINADO CROMADO 7 BILLAS TRUPAN.jpg" alt="TUBO INCLINADO CROMADO 7 BILLAS TRUPAN">
+    <p>TUBO INCLINADO CROMADO 7 BILLAS TRUPAN</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO INCLINADO DORADO 7 BILLAS BASE PLANA">
+    <img src="TUBO INCLINADO DORADO 7 BILLAS BASE PLANA.jpg" alt="TUBO INCLINADO DORADO 7 BILLAS BASE PLANA">
+    <p>TUBO INCLINADO DORADO 7 BILLAS BASE PLANA</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO INCLINADO NEGRO 6 BILLAS BASE PLANO">
+    <img src="TUBO INCLINADO NEGRO 6 BILLAS BASE PLANO.jpg" alt="TUBO INCLINADO NEGRO 6 BILLAS BASE PLANO">
+    <p>TUBO INCLINADO NEGRO 6 BILLAS BASE PLANO</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO INCLINADO NEGRO 6 BILLAS TRUPAN">
+    <img src="TUBO INCLINADO NEGRO 6 BILLAS TRUPAN.jpg" alt="TUBO INCLINADO NEGRO 6 BILLAS TRUPAN">
+    <p>TUBO INCLINADO NEGRO 6 BILLAS TRUPAN</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO INCLINADO NEGRO 7 BILLAS 2R">
+    <img src="TUBO INCLINADO NEGRO 7 BILLAS 2R.jpg" alt="TUBO INCLINADO NEGRO 7 BILLAS 2R">
+    <p>TUBO INCLINADO NEGRO 7 BILLAS 2R</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO INCLINADO NEGRO 7 BILLAS BASE PLANA">
+    <img src="TUBO INCLINADO NEGRO 7 BILLAS BASE PLANA.jpg" alt="TUBO INCLINADO NEGRO 7 BILLAS BASE PLANA">
+    <p>TUBO INCLINADO NEGRO 7 BILLAS BASE PLANA</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO INCLINADO NEGRO 7 BILLAS TRUPAN">
+    <img src="TUBO INCLINADO NEGRO 7 BILLAS TRUPAN.jpg" alt="TUBO INCLINADO NEGRO 7 BILLAS TRUPAN">
+    <p>TUBO INCLINADO NEGRO 7 BILLAS TRUPAN</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO NEGRO OVALADO RECTO 7BILLAS TRUPAN">
+    <img src="TUBO NEGRO OVALADO RECTO 7BILLAS TRUPAN.jpg" alt="TUBO NEGRO OVALADO RECTO 7BILLAS TRUPAN">
+    <p>TUBO NEGRO OVALADO RECTO 7BILLAS TRUPAN</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO OVAL CROMADO BASE PLANA">
+    <img src="TUBO OVAL CROMADO BASE PLANA.jpg" alt="TUBO OVAL CROMADO BASE PLANA">
+    <p>TUBO OVAL CROMADO BASE PLANA</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO OVAL CROMADO PARA TRUPAN">
+    <img src="TUBO OVAL CROMADO PARA TRUPAN.jpg" alt="TUBO OVAL CROMADO PARA TRUPAN">
+    <p>TUBO OVAL CROMADO PARA TRUPAN</p>
+  </div>
+
+<div class="item" data-nombre="TUBO RECTANGULAR NEGRO GRUESO 30 CM 2 RANURAS">
+    <img src="TUBO RECTANGULAR NEGRO GRUESO 30 CM 2 RANURAS.jpg" alt="TUBO RECTANGULAR NEGRO GRUESO 30 CM 2 RANURAS">
+    <p>TUBO RECTANGULAR NEGRO GRUESO 30 CM 2 RANURAS</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO RECTO 5 BILLAS TRUPAN">
+    <img src="TUBO RECTO 5 BILLAS TRUPAN.jpg" alt="TUBO RECTO 5 BILLAS TRUPAN">
+    <p>TUBO RECTO 5 BILLAS TRUPAN</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO RECTO 6 BILLAS TRUPAN">
+    <img src="TUBO RECTO 6 BILLAS TRUPAN.jpg" alt="TUBO RECTO 6 BILLAS TRUPAN">
+    <p>TUBO RECTO 6 BILLAS TRUPAN</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO RECTO 7 BILLAS TRUPAN">
+    <img src="TUBO RECTO 7 BILLAS TRUPAN.jpg" alt="TUBO RECTO 7 BILLAS TRUPAN">
+    <p>TUBO RECTO 7 BILLAS TRUPAN</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO RECTO CROMADO 7 BILLAS EMPOTRABLE">
+    <img src="TUBO RECTO CROMADO 7 BILLAS EMPOTRABLE.jpg" alt="TUBO RECTO CROMADO 7 BILLAS EMPOTRABLE">
+    <p>TUBO RECTO CROMADO 7 BILLAS EMPOTRABLE</p>
+  </div>
+
+  <div class="item" data-nombre="TUBO TRUPAN COCO 7 PUNTAS">
+    <img src="TUBO TRUPAN COCO 7 PUNTAS.jpg" alt="TUBO TRUPAN COCO 7 PUNTAS">
+    <p>TUBO TRUPAN COCO 7 PUNTAS</p>
+  </div>
+
+  <div class="item" data-nombre="CASCADA CROMADA 7 BILLAS MALLA">
+    <img src="CASCADA CROMADA 7 BILLAS MALLA.jpg" alt="CASCADA CROMADA 7 BILLAS MALLA">
+    <p>CASCADA CROMADA 7 BILLAS MALLA</p>
+  </div>
+
+  <div class="item" data-nombre="PALITO MALLA 10 CM">
+    <img src="PALITO MALLA 10 CM.jpg" alt="PALITO MALLA 10 CM">
+    <p>PALITO MALLA 10 CM</p>
+  </div>
+
+  <div class="item" data-nombre="PALITO MALLA 15 CM">
+    <img src="PALITO MALLA 15 CM.jpg" alt="PALITO MALLA 15 CM">
+    <p>PALITO MALLA 15 CM</p>
+  </div>
+
+  <div class="item" data-nombre="PALITO MALLA 20 CM">
+    <img src="PALITO MALLA 20 CM.jpg" alt="PALITO MALLA 20 CM">
+    <p>PALITO MALLA 20 CM</p>
+  </div>
+
+<div class="item" data-nombre="PALITO MALLA 25 CM">
+    <img src="PALITO MALLA 25 CM.jpg" alt="PALITO MALLA 25 CM">
+    <p>PALITO MALLA 25 CM</p>
+  </div>
+
+  <div class="item" data-nombre="PALITO MALLA 30 CM">
+    <img src="PALITO MALLA 30 CM.jpg" alt="PALITO MALLA 30 CM">
+    <p>PALITO MALLA 30 CM</p>
+  </div>
+
+  <div class="item" data-nombre="PALITO MALLA 5 BILLAS">
+    <img src="PALITO MALLA 5 BILLAS.jpg" alt="PALITO MALLA 5 BILLAS">
+    <p>PALITO MALLA 5 BILLAS</p>
+  </div>
+
+  <div class="item" data-nombre="PALITO MALLA 6 BILLAS">
+    <img src="PALITO MALLA 6 BILLAS.jpg" alt="PALITO MALLA 6 BILLAS">
+    <p>PALITO MALLA 6 BILLAS</p>
+  </div>
+
+  <div class="item" data-nombre="PALITO MALLA 7 BILLAS">
+    <img src="PALITO MALLA 7 BILLAS.jpg" alt="PALITO MALLA 7 BILLAS">
+    <p>PALITO MALLA 7 BILLAS</p>
+  </div>
+
+  <div class="item" data-nombre="TAPA DECORATIVA PARA PALITO TRUPAN MALLA">
+    <img src="TAPA DECORATIVA PARA PALITO TRUPAN MALLA.jpg" alt="TAPA DECORATIVA PARA PALITO TRUPAN MALLA">
+    <p>TAPA DECORATIVA PARA PALITO TRUPAN MALLA</p>
+  </div>
+</div>
+
+<h2 style="color: white;">Mallas y Canastillas</h2>
+<div class="grid" id="catalogo">
+  <div class="item" data-nombre="CANASTILLA 40 CM X 60 CM">
+    <img src="CANASTILLA 40 CM X 60 CM.jpg" alt="CANASTILLA 40 CM X 60 CM">
+    <p>CANASTILLA 40 CM X 60 CM</p>
+  </div>
+
+  <div class="item" data-nombre="CANASTILLA 50 CM X 80 CM">
+    <img src="CANASTILLA 50 CM X 80 CM.jpg" alt="CANASTILLA 50 CM X 80 CM">
+    <p>CANASTILLA 50 CM X 80 CM</p>
+  </div>
+
+  <div class="item" data-nombre="CANASTILLA 60 CM X 1 M">
+    <img src="CANASTILLA 60 CM X 1 M.jpg" alt="CANASTILLA 60 CM X 1 M">
+    <p>CANASTILLA 60 CM X 1 M</p>
+  </div>
+
+  <div class="item" data-nombre="MALLA 1,2 M X 50CM">
+    <img src="MALLA 1,2 M X 50CM.jpg" alt="MALLA 1,2 M X 50CM">
+    <p>MALLA 1,2 M X 50CM</p>
+  </div>
+
+  <div class="item" data-nombre="MALLA 1,2M X 30CM">
+    <img src="MALLA 1,2M X 30CM.jpg" alt="MALLA 1,2M X 30CM">
+    <p>MALLA 1,2M X 30CM</p>
+  </div>
+
+  <div class="item" data-nombre="MALLA 1,5M X 20CM">
+    <img src="MALLA 1,5M X 20CM.jpg" alt="MALLA 1,5M X 20CM">
+    <p>MALLA 1,5M X 20CM</p>
+  </div>
+
+  <div class="item" data-nombre="MALLA 1,5M X 30CM">
+    <img src="MALLA 1,5M X 30CM.jpg" alt="MALLA 1,5M X 30CM">
+    <p>MALLA 1,5M X 30CM</p>
+  </div>
+
+  <div class="item" data-nombre="MALLA 1,8M X 20CM">
+    <img src="MALLA 1,8M X 20CM.jpg" alt="MALLA 1,8M X 20CM">
+    <p>MALLA 1,8M X 20CM</p>
+  </div>
+
+  <div class="item" data-nombre="MALLA 1.5M X 50CM">
+    <img src="MALLA 1.5M X 50CM.jpg" alt="MALLA 1.5M X 50CM">
+    <p>MALLA 1.5M X 50CM</p>
+  </div>
+
+  <div class="item" data-nombre="MALLA 1.8 M X 50 CM">
+    <img src="MALLA 1.8 M X 50 CM.jpg" alt="MALLA 1.8 M X 50 CM">
+    <p>MALLA 1.8 M X 50 CM</p>
+  </div>
+
+<div class="item" data-nombre="MALLA 1.80M X 30CM">
+    <img src="MALLA 1.80M X 30CM.jpg" alt="MALLA 1.80M X 30CM">
+    <p>MALLA 1.80M X 30CM</p>
+  </div>
+
+  <div class="item" data-nombre="MALLA 1M X 20CM">
+    <img src="MALLA 1M X 20CM.jpg" alt="MALLA 1M X 20CM">
+    <p>MALLA 1M X 20CM</p>
+  </div>
+
+  <div class="item" data-nombre="MALLA 1M X 30CM">
+    <img src="MALLA 1M X 30CM.jpg" alt="MALLA 1M X 30CM">
+    <p>MALLA 1M X 30CM</p>
+  </div>
+
+  <div class="item" data-nombre="MALLA 1M X 50 CM">
+    <img src="MALLA 1M X 50 CM.jpg" alt="MALLA 1M X 50 CM">
+    <p>MALLA 1M X 50 CM</p>
+  </div>
+
+  <div class="item" data-nombre="MALLA 2M X 20CM">
+    <img src="MALLA 2M X 20CM.jpg" alt="MALLA 2M X 20CM">
+    <p>MALLA 2M X 20CM</p>
+  </div>
+
+  <div class="item" data-nombre="MALLA 2M X 30CM">
+    <img src="MALLA 2M X 30CM.jpg" alt="MALLA 2M X 30CM">
+    <p>MALLA 2M X 30CM</p>
+  </div>
+
+  <div class="item" data-nombre="MALLA 2M X 50CM">
+    <img src="MALLA 2M X 50CM.jpg" alt="MALLA 2M X 50CM">
+    <p>MALLA 2M X 50CM</p>
+  </div>
+
+  <div class="item" data-nombre="MALLA 2X1 TUBO REDONDO">
+    <img src="MALLA 2X1 TUBO REDONDO.jpg" alt="MALLA 2X1 TUBO REDONDO">
+    <p>MALLA 2X1 TUBO REDONDO</p>
+  </div>
+
+  <div class="item" data-nombre="MALLA 2X80 TUBO REDONDO">
+    <img src="MALLA 2X80 TUBO REDONDO.jpg" alt="MALLA 2X80 TUBO REDONDO">
+    <p>MALLA 2X80 TUBO REDONDO</p>
+  </div>
+
+  <div class="item" data-nombre="MALLA ARMABLE CHICO">
+    <img src="MALLA ARMABLE CHICO.jpg" alt="MALLA ARMABLE CHICO">
+    <p>MALLA ARMABLE CHICO</p>
+  </div>
+
+<div class="item" data-nombre="MALLA ARMABLE GRANDE">
+    <img src="MALLA ARMABLE GRANDE.jpg" alt="MALLA ARMABLE GRANDE">
+    <p>MALLA ARMABLE GRANDE</p>
+  </div>
+
+  <div class="item" data-nombre="MALLA CON PATAS 1,2M">
+    <img src="MALLA CON PATAS 1,2M.jpg" alt="MALLA CON PATAS 1,2M">
+    <p>MALLA CON PATAS 1,2M</p>
+  </div>
+
+  <div class="item" data-nombre="MALLA CON PATAS 1,5M">
+    <img src="MALLA CON PATAS 1,5M.jpg" alt="MALLA CON PATAS 1,5M">
+    <p>MALLA CON PATAS 1,5M</p>
+  </div>
+
+  <div class="item" data-nombre="MALLA CON PATAS 1M">
+    <img src="MALLA CON PATAS 1M.jpg" alt="MALLA CON PATAS 1M">
+    <p>MALLA CON PATAS 1M</p>
+  </div>
+
+  <div class="item" data-nombre="MODULAR CON MALLA NEGRO">
+    <img src="MODULAR CON MALLA NEGRO.jpg" alt="MODULAR CON MALLA NEGRO">
+    <p>MODULAR CON MALLA NEGRO</p>
+  </div>
+</div>
+
+
+<h2 style="color: white;">Colgadores</h2>
+
+<div class="grid" id="catalogo">
+  <div class="item" data-nombre="COLGADOR ACRÍLICO FALABELLA">
+    <img src="COLGADOR ACRÍLICO FALABELLA.jpg" alt="COLGADOR ACRÍLICO FALABELLA">
+    <p>COLGADOR ACRÍLICO FALABELLA</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR ADULTO RELIEVE">
+    <img src="COLGADOR ADULTO RELIEVE.jpg" alt="COLGADOR ADULTO RELIEVE">
+    <p>COLGADOR ADULTO RELIEVE</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR ALUMINIO">
+    <img src="COLGADOR ALUMINIO.jpg" alt="COLGADOR ALUMINIO">
+    <p>COLGADOR ALUMINIO</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR BLANCO LENCERIA FALABELLA">
+    <img src="COLGADOR BLANCO LENCERIA FALABELLA.jpg" alt="COLGADOR BLANCO LENCERIA FALABELLA">
+    <p>COLGADOR BLANCO LENCERIA FALABELLA</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR CLÁSICO BLANCO ADULTO">
+    <img src="COLGADOR CLÁSICO BLANCO ADULTO.jpg" alt="COLGADOR CLÁSICO BLANCO ADULTO">
+    <p>COLGADOR CLÁSICO BLANCO ADULTO</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR CLÁSICO BLANCO NIÑOS">
+    <img src="COLGADOR CLÁSICO BLANCO NIÑOS.jpg" alt="COLGADOR CLÁSICO BLANCO NIÑOS">
+    <p>COLGADOR CLÁSICO BLANCO NIÑOS</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR CLÁSICO COLOR ADULTO">
+    <img src="COLGADOR CLÁSICO COLOR ADULTO.jpg" alt="COLGADOR CLÁSICO COLOR ADULTO">
+    <p>COLGADOR CLÁSICO COLOR ADULTO</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR CLÁSICO COLOR NIÑO">
+    <img src="COLGADOR CLÁSICO COLOR NIÑO.jpg" alt="COLGADOR CLÁSICO COLOR NIÑO">
+    <p>COLGADOR CLÁSICO COLOR NIÑO</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR CLÁSICO LENCERIA">
+    <img src="COLGADOR CLÁSICO LENCERIA.jpg" alt="COLGADOR CLÁSICO LENCERIA">
+    <p>COLGADOR CLÁSICO LENCERIA</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR CLÁSICO NEGRO ADULTO">
+    <img src="COLGADOR CLÁSICO NEGRO ADULTO.jpg" alt="COLGADOR CLÁSICO NEGRO ADULTO">
+    <p>COLGADOR CLÁSICO NEGRO ADULTO</p>
+  </div>
+
+<div class="item" data-nombre="COLGADOR CLÁSICO NEGRO NIÑOS">
+    <img src="COLGADOR CLÁSICO NEGRO NIÑOS.jpg" alt="COLGADOR CLÁSICO NEGRO NIÑOS">
+    <p>COLGADOR CLÁSICO NEGRO NIÑOS</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR COLORES YOMH ADULTO">
+    <img src="COLGADOR COLORES YOMH ADULTO.jpg" alt="COLGADOR COLORES YOMH ADULTO">
+    <p>COLGADOR COLORES YOMH ADULTO</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR COLORES YOMH NIÑO">
+    <img src="COLGADOR COLORES YOMH NIÑO.jpg" alt="COLGADOR COLORES YOMH NIÑO">
+    <p>COLGADOR COLORES YOMH NIÑO</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR CONJUNTOS BEBE ECONOMICO">
+    <img src="COLGADOR CONJUNTOS BEBE ECONOMICO.jpg" alt="COLGADOR CONJUNTOS BEBE ECONOMICO">
+    <p>COLGADOR CONJUNTOS BEBE ECONOMICO</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR CORAZON ADULTO">
+    <img src="COLGADOR CORAZON ADULTO.jpg" alt="COLGADOR CORAZON ADULTO">
+    <p>COLGADOR CORAZON ADULTO</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR DE METAL PLATEADO IMPORTADO">
+    <img src="COLGADOR DE METAL PLATEADO IMPORTADO.jpg" alt="COLGADOR DE METAL PLATEADO IMPORTADO">
+    <p>COLGADOR DE METAL PLATEADO IMPORTADO</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR F ADULTO">
+    <img src="COLGADOR F ADULTO.jpg" alt="COLGADOR F ADULTO">
+    <p>COLGADOR F ADULTO</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR F BEBE">
+    <img src="COLGADOR F BEBE.jpg" alt="COLGADOR F BEBE">
+    <p>COLGADOR F BEBE</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR F NIÑO">
+    <img src="COLGADOR F NIÑO.jpg" alt="COLGADOR F NIÑO">
+    <p>COLGADOR F NIÑO</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR GAMUZA CON CORAZÓN">
+    <img src="COLGADOR GAMUZA CON CORAZÓN.jpg" alt="COLGADOR GAMUZA CON CORAZÓN">
+    <p>COLGADOR GAMUZA CON CORAZÓN</p>
+  </div>
+
+<div class="item" data-nombre="COLGADOR MADERA BANDAS GOMA A1">
+    <img src="COLGADOR MADERA BANDAS GOMA A1.jpg" alt="COLGADOR MADERA BANDAS GOMA A1">
+    <p>COLGADOR MADERA BANDAS GOMA A1</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR MADERA CALIDAD A">
+    <img src="COLGADOR MADERA CALIDAD A.jpg" alt="COLGADOR MADERA CALIDAD A">
+    <p>COLGADOR MADERA CALIDAD A</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR MADERA CALIDAD B">
+    <img src="COLGADOR MADERA CALIDAD B.jpg" alt="COLGADOR MADERA CALIDAD B">
+    <p>COLGADOR MADERA CALIDAD B</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR MADERA CON RETENES">
+    <img src="COLGADOR MADERA CON RETENES.jpg" alt="COLGADOR MADERA CON RETENES">
+    <p>COLGADOR MADERA CON RETENES</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR MADERA CON SILUETA">
+    <img src="COLGADOR MADERA CON SILUETA.jpg" alt="COLGADOR MADERA CON SILUETA">
+    <p>COLGADOR MADERA CON SILUETA</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR MADERA NIÑO">
+    <img src="COLGADOR MADERA NIÑO.jpg" alt="COLGADOR MADERA NIÑO">
+    <p>COLGADOR MADERA NIÑO</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR METAL DORADO IMPORTADO">
+    <img src="COLGADOR METAL DORADO IMPORTADO.jpg" alt="COLGADOR METAL DORADO IMPORTADO">
+    <p>COLGADOR METAL DORADO IMPORTADO</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR MULTIPLE OVALADO">
+    <img src="COLGADOR MULTIPLE OVALADO.jpg" alt="COLGADOR MULTIPLE OVALADO">
+    <p>COLGADOR MULTIPLE OVALADO</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR NIÑA PLASTICO COLORES">
+    <img src="COLGADOR NIÑA PLASTICO COLORES.jpg" alt="COLGADOR NIÑA PLASTICO COLORES">
+    <p>COLGADOR NIÑA PLASTICO COLORES</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR SILICONEADO">
+    <img src="COLGADOR SILICONEADO.jpg" alt="COLGADOR SILICONEADO">
+    <p>COLGADOR SILICONEADO</p>
+  </div>
+
+<div class="item" data-nombre="COLGADOR SIN CORAZON ADULTO">
+    <img src="COLGADOR SIN CORAZON ADULTO.jpg" alt="COLGADOR SIN CORAZON ADULTO">
+    <p>COLGADOR SIN CORAZON ADULTO</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR SIN CORAZON NIÑO">
+    <img src="COLGADOR SIN CORAZON NIÑO.jpg" alt="COLGADOR SIN CORAZON NIÑO">
+    <p>COLGADOR SIN CORAZON NIÑO</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR TRANSPARENTE NIÑOS">
+    <img src="COLGADOR TRANSPARENTE NIÑOS.jpg" alt="COLGADOR TRANSPARENTE NIÑOS">
+    <p>COLGADOR TRANSPARENTE NIÑOS</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADOR TRANSPARENTE POLERO ADULTO">
+    <img src="COLGADOR TRANSPARENTE POLERO ADULTO.jpg" alt="COLGADOR TRANSPARENTE POLERO ADULTO">
+    <p>COLGADOR TRANSPARENTE POLERO ADULTO</p>
+  </div>
+
+  <div class="item" data-nombre="COLGADORES ACERADOS IMPORTADOS">
+    <img src="COLGADORES ACERADOS IMPORTADOS.jpg" alt="COLGADORES ACERADOS IMPORTADOS">
+    <p>COLGADORES ACERADOS IMPORTADOS</p>
+  </div>
+</div>
+
+
+<h2 style="color: white;">Pinzas</h2>
+
+<div class="grid" id="catalogo">
+  <div class="item" data-nombre="PINZA ACCESORIO CROMADO">
+    <img src="PINZA ACCESORIO CROMADO.jpg" alt="PINZA ACCESORIO CROMADO">
+    <p>PINZA ACCESORIO CROMADO</p>
+  </div>
+
+  <div class="item" data-nombre="PINZA ACRILICO LENCERIA">
+    <img src="PINZA ACRILICO LENCERIA.jpg" alt="PINZA ACRILICO LENCERIA">
+    <p>PINZA ACRILICO LENCERIA</p>
+  </div>
+
+  <div class="item" data-nombre="PINZA CROMADA PLASTIFICADA">
+    <img src="PINZA CROMADA PLASTIFICADA.jpg" alt="PINZA CROMADA PLASTIFICADA">
+    <p>PINZA CROMADA PLASTIFICADA</p>
+  </div>
+
+  <div class="item" data-nombre="PINZA DELGADO GARFIO DECORATIVO">
+    <img src="PINZA DELGADO GARFIO DECORATIVO.jpg" alt="PINZA DELGADO GARFIO DECORATIVO">
+    <p>PINZA DELGADO GARFIO DECORATIVO</p>
+  </div>
+
+  <div class="item" data-nombre="PINZA F 3 ADULTO">
+    <img src="PINZA F 3 ADULTO.jpg" alt="PINZA F 3 ADULTO">
+    <p>PINZA F 3 ADULTO</p>
+  </div>
+
+  <div class="item" data-nombre="PINZA F ADULTO">
+    <img src="PINZA F ADULTO.jpg" alt="PINZA F ADULTO">
+    <p>PINZA F ADULTO</p>
+  </div>
+
+  <div class="item" data-nombre="PINZA F BEBE">
+    <img src="PINZA F BEBE.jpg" alt="PINZA F BEBE">
+    <p>PINZA F BEBE</p>
+  </div>
+
+  <div class="item" data-nombre="PINZA F NIÑO">
+    <img src="PINZA F NIÑO.jpg" alt="PINZA F NIÑO">
+    <p>PINZA F NIÑO</p>
+  </div>
+
+  <div class="item" data-nombre="PINZA GARFIO DELGADO">
+    <img src="PINZA GARFIO DELGADO.jpg" alt="PINZA GARFIO DELGADO">
+    <p>PINZA GARFIO DELGADO</p>
+  </div>
+
+  <div class="item" data-nombre="PINZA GARFIO GRUESO">
+    <img src="PINZA GARFIO GRUESO.jpg" alt="PINZA GARFIO GRUESO">
+    <p>PINZA GARFIO GRUESO</p>
+  </div>
+
+<div class="item" data-nombre="PINZA LENCERIA COLORES MODELO ACRILICO">
+    <img src="PINZA LENCERIA COLORES MODELO ACRILICO.jpg" alt="PINZA LENCERIA COLORES MODELO ACRILICO">
+    <p>PINZA LENCERIA COLORES MODELO ACRILICO</p>
+  </div>
+
+  <div class="item" data-nombre="PINZA LENCERIA DORADO IMPORTADO">
+    <img src="PINZA LENCERIA DORADO IMPORTADO.jpg" alt="PINZA LENCERIA DORADO IMPORTADO">
+    <p>PINZA LENCERIA DORADO IMPORTADO</p>
+  </div>
+
+  <div class="item" data-nombre="PINZA MADERA METAL">
+    <img src="PINZA MADERA METAL.jpg" alt="PINZA MADERA METAL">
+    <p>PINZA MADERA METAL</p>
+  </div>
+
+  <div class="item" data-nombre="PINZA MADERA METAL A1">
+    <img src="PINZA MADERA METAL A1.jpg" alt="PINZA MADERA METAL A1">
+    <p>PINZA MADERA METAL A1</p>
+  </div>
+
+  <div class="item" data-nombre="PINZA MADERA METAL CALIDAD A">
+    <img src="PINZA MADERA METAL CALIDAD A.jpg" alt="PINZA MADERA METAL CALIDAD A">
+    <p>PINZA MADERA METAL CALIDAD A</p>
+  </div>
+
+  <div class="item" data-nombre="PINZA MADERA METAL NIÑO">
+    <img src="PINZA MADERA METAL NIÑO.jpg" alt="PINZA MADERA METAL NIÑO">
+    <p>PINZA MADERA METAL NIÑO</p>
+  </div>
+
+  <div class="item" data-nombre="PINZA MADERA PLÁSTICO">
+    <img src="PINZA MADERA PLÁSTICO.jpg" alt="PINZA MADERA PLÁSTICO">
+    <p>PINZA MADERA PLÁSTICO</p>
+  </div>
+
+  <div class="item" data-nombre="PINZA METAL CROMADO">
+    <img src="PINZA METAL CROMADO.jpg" alt="PINZA METAL CROMADO">
+    <p>PINZA METAL CROMADO</p>
+  </div>
+
+  <div class="item" data-nombre="PINZA METAL PLASTICO SINCRADO">
+    <img src="PINZA METAL PLASTICO SINCRADO.jpg" alt="PINZA METAL PLASTICO SINCRADO">
+    <p>PINZA METAL PLASTICO SINCRADO</p>
+  </div>
+
+  <div class="item" data-nombre="PINZA METAL SINCRADO AZUL">
+    <img src="PINZA METAL SINCRADO AZUL.jpg" alt="PINZA METAL SINCRADO AZUL">
+    <p>PINZA METAL SINCRADO AZUL</p>
+  </div>
+
+<div class="item" data-nombre="PINZA METAL SINCRADO NEGRO">
+    <img src="PINZA METAL SINCRADO NEGRO.jpg" alt="PINZA METAL SINCRADO NEGRO">
+    <p>PINZA METAL SINCRADO NEGRO</p>
+  </div>
+
+  <div class="item" data-nombre="PINZA NACIONAL TRANSPARENTE">
+    <img src="PINZA NACIONAL TRANSPARENTE.jpg" alt="PINZA NACIONAL TRANSPARENTE">
+    <p>PINZA NACIONAL TRANSPARENTE</p>
+  </div>
+</div>
+
+
+<h2 style="color: white;">Soportes y Exhibidores</h2>
+
+<div class="grid" id="catalogo">
+  <div class="item" data-nombre="ACRILICO INTERIOR CALZADO">
+    <img src="ACRILICO INTERIOR CALZADO.jpg" alt="ACRILICO INTERIOR CALZADO">
+    <p>ACRILICO INTERIOR CALZADO</p>
+  </div>
+
+  <div class="item" data-nombre="COLETERO IMPORTADO 5 DISCOS">
+    <img src="COLETERO IMPORTADO 5 DISCOS.jpg" alt="COLETERO IMPORTADO 5 DISCOS">
+    <p>COLETERO IMPORTADO 5 DISCOS</p>
+  </div>
+
+  <div class="item" data-nombre="COLETERO MESA IMPORTADO">
+    <img src="COLETERO MESA IMPORTADO.jpg" alt="COLETERO MESA IMPORTADO">
+    <p>COLETERO MESA IMPORTADO</p>
+  </div>
+
+  <div class="item" data-nombre="COLETERO MESA SEGURO">
+    <img src="COLETERO MESA SEGURO.jpg" alt="COLETERO MESA SEGURO">
+    <p>COLETERO MESA SEGURO</p>
+  </div>
+
+  <div class="item" data-nombre="COLETERO MESA UÑAS">
+    <img src="COLETERO MESA UÑAS.jpg" alt="COLETERO MESA UÑAS">
+    <p>COLETERO MESA UÑAS</p>
+  </div>
+
+  <div class="item" data-nombre="COLETERO PISO SEGURO">
+    <img src="COLETERO PISO SEGURO.jpg" alt="COLETERO PISO SEGURO">
+    <p>COLETERO PISO SEGURO</p>
+  </div>
+
+  <div class="item" data-nombre="COLETERO PISO UÑAS">
+    <img src="COLETERO PISO UÑAS.jpg" alt="COLETERO PISO UÑAS">
+    <p>COLETERO PISO UÑAS</p>
+  </div>
+
+<div class="item" data-nombre="EXHIBIDOR DE CORREAS PLOMO AZULADO">
+    <img src="EXHIBIDOR DE CORREAS PLOMO AZULADO.jpg" alt="EXHIBIDOR DE CORREAS PLOMO AZULADO">
+    <p>EXHIBIDOR DE CORREAS PLOMO AZULADO</p>
+  </div>
+
+  <div class="item" data-nombre="GANCHO CALZADO">
+    <img src="GANCHO CALZADO.jpg" alt="GANCHO CALZADO">
+    <p>GANCHO CALZADO</p>
+  </div>
+
+  <div class="item" data-nombre="GANCHO CALZADO GRUESO">
+    <img src="GANCHO CALZADO GRUESO.jpg" alt="GANCHO CALZADO GRUESO">
+    <p>GANCHO CALZADO GRUESO</p>
+  </div>
+
+  <div class="item" data-nombre="PORTACARTERA IMPORTADO ACERO">
+    <img src="PORTACARTERA IMPORTADO ACERO.jpg" alt="PORTACARTERA IMPORTADO ACERO">
+    <p>PORTACARTERA IMPORTADO ACERO</p>
+  </div>
+
+  <div class="item" data-nombre="SOPORTE CALZADO CUADRADO CROMADO CR2R">
+    <img src="SOPORTE CALZADO CUADRADO CROMADO CR2R.jpg" alt="SOPORTE CALZADO CUADRADO CROMADO CR2R">
+    <p>SOPORTE CALZADO CUADRADO CROMADO CR2R</p>
+  </div>
+
+  <div class="item" data-nombre="SOPORTE CALZADO CUADRADO NEGRO CR2R">
+    <img src="SOPORTE CALZADO CUADRADO NEGRO CR2R.jpg" alt="SOPORTE CALZADO CUADRADO NEGRO CR2R">
+    <p>SOPORTE CALZADO CUADRADO NEGRO CR2R</p>
+  </div>
+
+  <div class="item" data-nombre="SOPORTE CALZADO OVALADO CR2R">
+    <img src="SOPORTE CALZADO OVALADO CR2R.jpg" alt="SOPORTE CALZADO OVALADO CR2R">
+    <p>SOPORTE CALZADO OVALADO CR2R</p>
+  </div>
+
+<div class="item" data-nombre="EXHIBIDOR DE CARTERAS PLOMO AZULADO 3 DISCOS">
+    <img src="EXHIBIDOR DE CARTERAS PLOMO AZULADO 3 DISCOS.jpg" alt="EXHIBIDOR DE CARTERAS PLOMO AZULADO 3 DISCOS">
+    <p>EXHIBIDOR DE CARTERAS PLOMO AZULADO 3 DISCOS</p>
+  </div>
+
+  <div class="item" data-nombre="EXHIBIDOR DE CORREAS DORADO">
+    <img src="EXHIBIDOR DE CORREAS DORADO.jpg" alt="EXHIBIDOR DE CORREAS DORADO">
+    <p>EXHIBIDOR DE CORREAS DORADO</p>
+  </div>
+
+  <div class="item" data-nombre="EXHIBIDOR DE CORREAS NEGRO">
+    <img src="EXHIBIDOR DE CORREAS NEGRO.jpg" alt="EXHIBIDOR DE CORREAS NEGRO">
+    <p>EXHIBIDOR DE CORREAS NEGRO</p>
+  </div>
+</div>
+
+<h2 style="color: white;">Accesorios para Tiendas</h2>
+
+<div class="grid" id="catalogo">
+  <div class="item" data-nombre="POSTE CUADRADO DOBLE RANURA 3M">
+    <img src="POSTE CUADRADO DOBLE RANURA 3M.jpg" alt="POSTE CUADRADO DOBLE RANURA 3M">
+    <p>POSTE CUADRADO DOBLE RANURA 3M</p>
+  </div>
+
+  <div class="item" data-nombre="ACCESORIO POSTE CUADRADO PARED 2R">
+    <img src="ACCESORIO POSTE CUADRADO PARED 2R.jpg" alt="ACCESORIO POSTE CUADRADO PARED 2R">
+    <p>ACCESORIO POSTE CUADRADO PARED 2R</p>
+  </div>
+
+  <div class="item" data-nombre="ACCESORIO POSTE CUADRADO PISO">
+    <img src="ACCESORIO POSTE CUADRADO PISO.jpg" alt="ACCESORIO POSTE CUADRADO PISO">
+    <p>ACCESORIO POSTE CUADRADO PISO</p>
+  </div>
+
+  <div class="item" data-nombre="ACCESORIO POSTE CUADRADO TECHO 2R">
+    <img src="ACCESORIO POSTE CUADRADO TECHO 2R.jpg" alt="ACCESORIO POSTE CUADRADO TECHO 2R">
+    <p>ACCESORIO POSTE CUADRADO TECHO 2R</p>
+  </div>
+
+  <div class="item" data-nombre="ACRILICO CON PESTAÑA TEXA">
+    <img src="ACRILICO CON PESTAÑA TEXA.jpg" alt="ACRILICO CON PESTAÑA TEXA">
+    <p>ACRILICO CON PESTAÑA TEXA</p>
+  </div>
+
+  <div class="item" data-nombre="ACRILICO DELGADO VERDE CON PESTAÑA">
+    <img src="ACRILICO DELGADO VERDE CON PESTAÑA.jpg" alt="ACRILICO DELGADO VERDE CON PESTAÑA">
+    <p>ACRILICO DELGADO VERDE CON PESTAÑA</p>
+  </div>
+
+  <div class="item" data-nombre="ACRILICO DELGADO VERDE SIN PESTAÑA">
+    <img src="ACRILICO DELGADO VERDE SIN PESTAÑA.jpg" alt="ACRILICO DELGADO VERDE SIN PESTAÑA">
+    <p>ACRILICO DELGADO VERDE SIN PESTAÑA</p>
+  </div>
+
+  <div class="item" data-nombre="ACRILICO INTERIOR CALZADO">
+    <img src="ACRILICO INTERIOR CALZADO.jpg" alt="ACRILICO INTERIOR CALZADO">
+    <p>ACRILICO INTERIOR CALZADO</p>
+  </div>
+
+  <div class="item" data-nombre="ACRILICO SIN PESTAÑA TEXA">
+    <img src="ACRILICO SIN PESTAÑA TEXA.jpg" alt="ACRILICO SIN PESTAÑA TEXA">
+    <p>ACRILICO SIN PESTAÑA TEXA</p>
+  </div>
+
+  <div class="item" data-nombre="CINTA EMBALAJE 48MM X 366 MTRS">
+    <img src="CINTA EMBALAJE 48MM X 366 MTRS.jpg" alt="CINTA EMBALAJE 48MM X 366 MTRS">
+    <p>CINTA EMBALAJE 48MM X 366 MTRS</p>
+  </div>
+
+<div class="item" data-nombre="CINTA FILM TRANSPARENTE 20 PULGADAS">
+    <img src="CINTA FILM TRANSPARENTE 20 PULGADAS.jpg" alt="CINTA FILM TRANSPARENTE 20 PULGADAS">
+    <p>CINTA FILM TRANSPARENTE 20 PULGADAS</p>
+  </div>
+
+  <div class="item" data-nombre="CINTA FILM TRANSPARENTE 6 PULGADAS">
+    <img src="CINTA FILM TRANSPARENTE 6 PULGADAS.jpg" alt="CINTA FILM TRANSPARENTE 6 PULGADAS">
+    <p>CINTA FILM TRANSPARENTE 6 PULGADAS</p>
+  </div>
+
+  <div class="item" data-nombre="CINTA FILM TRANSPARENTE 9 PULGADAS">
+    <img src="CINTA FILM TRANSPARENTE 9 PULGADAS.jpg" alt="CINTA FILM TRANSPARENTE 9 PULGADAS">
+    <p>CINTA FILM TRANSPARENTE 9 PULGADAS</p>
+  </div>
+
+  <div class="item" data-nombre="CINTA FRAGIL">
+    <img src="CINTA FRAGIL.jpg" alt="CINTA FRAGIL">
+    <p>CINTA FRAGIL</p>
+  </div>
+
+  <div class="item" data-nombre="CUCHILLA PARA REPISA 30CM">
+    <img src="CUCHILLA PARA REPISA 30CM.jpg" alt="CUCHILLA PARA REPISA 30CM">
+    <p>CUCHILLA PARA REPISA 30CM</p>
+  </div>
+
+  <div class="item" data-nombre="JUEGO TORNILLO TARUGO">
+    <img src="JUEGO TORNILLO TARUGO.jpg" alt="JUEGO TORNILLO TARUGO">
+    <p>JUEGO TORNILLO TARUGO</p>
+  </div>
+
+  <div class="item" data-nombre="REPISA IMPORTADA TRUPAN">
+    <img src="REPISA IMPORTADA TRUPAN.jpg" alt="REPISA IMPORTADA TRUPAN">
+    <p>REPISA IMPORTADA TRUPAN</p>
+  </div>
+</div>
+
+
+<script>
+const seleccionados = new Set();
+document.querySelectorAll('.item').forEach(el=>{
+  el.addEventListener('click', ()=>{
+    el.classList.toggle('selected');
+    const nombre = el.dataset.nombre;
+    if(seleccionados.has(nombre)) seleccionados.delete(nombre);
+    else seleccionados.add(nombre);
+  });
+});
+
+function enviar(){
+  if(seleccionados.size===0){ alert('Selecciona al menos un producto'); return; }
+  const lista = Array.from(seleccionados).join(', ');
+  const telefono = '51925577578';
+  const mensaje = `Hola 👋, quiero consultar por estos productos: ${lista}`;
+  const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+  window.open(url, '_blank');
+}
+</script>
+</body>
+</html>
