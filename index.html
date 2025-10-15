@@ -1392,7 +1392,7 @@ function enviar(){
   if(seleccionados.size===0){ alert('Selecciona al menos un producto'); return; }
   const lista = Array.from(seleccionados).join(', ');
   const telefono = '51925577578';
-  const mensaje = `Hola 👋, quiero consultar por estos productos: ${lista}`;
+  const mensaje = `Hola 👋, cuales son los precios de estos productos: ${lista}`;
   const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
   window.open(url, '_blank');
 }
